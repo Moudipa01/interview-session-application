@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '@/hooks/useAuth';
 import { useMatch } from '@/hooks/useMatch';
 import Navbar from '@/components/Layout/Navbar';
-import api from '@/lib/api';
+import { api } from '@/lib/api';
 import { User } from '@/types';
 
 export default function MatchPage() {

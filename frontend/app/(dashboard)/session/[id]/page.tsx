@@ -5,7 +5,7 @@ import { useRouter, useParams } from 'next/navigation';
 import { useAuth } from '@/hooks/useAuth';
 import { useSession, useNotes } from '@/hooks/useSession';
 import Navbar from '@/components/Layout/Navbar';
-import api from '@/lib/api';
+import { api } from '@/lib/api';
 import { Session } from '@/types';
 
 export default function SessionPage() {
