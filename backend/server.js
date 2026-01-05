@@ -18,8 +18,12 @@ const PORT = process.env.PORT || 5001;
 
 // Middleware
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
-  credentials: true,
+  origin: [
+    "http://localhost:3000",
+    process.env.FRONTEND_URL,
+    process.env.VERCEL_FRONTEND_URL || "https://your-frontend-name.vercel.app"
+  ].filter(Boolean), // Remove undefined values
+  credentials: true
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
