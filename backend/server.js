@@ -20,10 +20,13 @@ const PORT = process.env.PORT || 5001;
 app.use(cors({
   origin: [
     "http://localhost:3000",
+    "https://interview-session-application.vercel.app",
     process.env.FRONTEND_URL,
-    process.env.VERCEL_FRONTEND_URL || "https://your-frontend-name.vercel.app"
+    process.env.VERCEL_FRONTEND_URL
   ].filter(Boolean), // Remove undefined values
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
